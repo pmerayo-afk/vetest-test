@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     SEO BÁSICO
+     ============================================================ -->
+<title>Miravet · Centro Veterinario y de Especialidades en Zaragoza</title>
+<meta name="description" content="Centro Veterinario Miravet en Miralbueno, Zaragoza. Medicina veterinaria avanzada con trato humano: diagnóstico propio, cirugía, especialidades y un equipo cercano. Pide tu cita." />
+<meta name="theme-color" content="#0E6E63" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.tudominio.com/" />
+
+<!-- Open Graph (compartir en redes) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Miravet · Centro Veterinario en Zaragoza" />
+<meta property="og:description" content="Donde la salud y el cariño van de la pata. Medicina veterinaria avanzada con trato humano en Miralbueno, Zaragoza." />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Datos estructurados (negocio local) — mejora el SEO local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Centro Veterinario Miravet",
+  "image": "",
+  "telephone": "+34 876 65 58 22",
+  "email": "info@miravetcv.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Lagos de Coronas, 47",
+    "addressLocality": "Zaragoza",
+    "postalCode": "50011",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Zaragoza",
+  "openingHours": ["Mo-Fr 08:30-20:30", "Sa 11:00-14:00"]
+}
+</script>
+
+<!-- Tipografías: Fraunces (display, cálida) + Manrope (texto, clínica) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   1. TOKENS DE DISEÑO (colores, tipos, radios, sombras)
+   ============================================================ */
+:root{
+  /* Color */
+  --ink:        #16302B;   /* texto principal, casi negro verdoso */
+  --ink-soft:   #3C504A;
+  --muted:      #5E716B;   /* texto secundario */
+  --teal-900:   #0C4A43;
+  --teal-700:   #0E6E63;   /* PRIMARIO corporativo */
+  --teal-500:   #2A9D8F;
+  --aqua-400:   #6FCDBE;   /* menta / acento */
+  --aqua-100:   #DDF1EC;   /* fondos suaves menta */
+  --cream:      #F6F2EA;   /* fondo cálido */
+  --sand:       #EFE7D8;
+  --peach:      #EE9C7E;   /* acento "cariño" — usar con MUCHA moderación */
+  --peach-soft: #FBE6DA;
+  --white:      #FFFFFF;
+  --line:       #E4DED2;   /* bordes hairline */
+
+  /* Tipografía */
+  --display: "Fraunces", Georgia, serif;
+  --body:    "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* Radios */
+  --r-xl: 34px;
+  --r-lg: 26px;
+  --r-md: 18px;
+  --r-sm: 12px;
+  --pill: 999px;
+
+  /* Sombras (tintadas de verde, suaves) */
+  --sh-sm: 0 2px 8px rgba(14,110,99,.06);
+  --sh-md: 0 14px 34px -18px rgba(12,74,67,.30);
+  --sh-lg: 0 30px 70px -30px rgba(12,74,67,.40);
+
+  --maxw: 1180px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* ============================================================
+   2. RESET / BASE
+   ============================================================ */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+ul{ list-style:none; }
+:focus-visible{ outline:3px solid var(--teal-500); outline-offset:3px; border-radius:6px; }
+
+h1,h2,h3{ font-family:var(--display); font-weight:600; line-height:1.08; letter-spacing:-.01em; color:var(--ink); }
+
+.container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:24px; }
+
+/* Etiqueta "eyebrow" reutilizable encima de los títulos */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--body); font-weight:700; font-size:.78rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--teal-700);
+}
+.eyebrow::before{ content:""; width:26px; height:2px; background:var(--aqua-400); border-radius:2px; }
+
+.section{ padding-block:96px; position:relative; }
+.section__head{ max-width:620px; margin-bottom:54px; }
+.section__head.center{ margin-inline:auto; text-align:center; }
+.section__head.center .eyebrow::before{ display:none; }
+.section__head h2{ font-size:clamp(2rem, 1.4rem + 2.4vw, 3.1rem); margin:16px 0 14px; }
+.section__head p{ color:var(--muted); font-size:1.06rem; }
+
+/* ============================================================
+   3. BOTONES (tipo píldora)
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  font-weight:700; font-size:1rem; border-radius:var(--pill);
+  padding:15px 28px; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+  white-space:nowrap;
+}
+.btn svg{ width:18px; height:18px; }
+.btn--primary{ background:var(--teal-700); color:#fff; box-shadow:var(--sh-md); }
+.btn--primary:hover{ background:var(--teal-900); transform:translateY(-2px); box-shadow:var(--sh-lg); }
+.btn--ghost{ background:transparent; color:var(--ink); border:1.5px solid var(--line); }
+.btn--ghost:hover{ border-color:var(--teal-500); color:var(--teal-700); background:#fff; transform:translateY(-2px); }
+.btn--light{ background:#fff; color:var(--teal-700); box-shadow:var(--sh-sm); }
+.btn--light:hover{ transform:translateY(-2px); box-shadow:var(--sh-md); }
+.btn--block{ width:100%; }
+
+/* ============================================================
+   4. HEADER (sticky, semitransparente con blur)
+   ============================================================ */
+.header{
+  position:fixed; inset:0 0 auto 0; z-index:100;
+  padding-block:14px;
+  background:rgba(246,242,234,.72);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:background .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.header.scrolled{ background:rgba(246,242,234,.9); border-bottom-color:var(--line); box-shadow:0 6px 24px -20px rgba(12,74,67,.5); }
+.nav{ display:flex; align-items:center; gap:32px; }
+
+/* Logo con marca de huella */
+.brand{ display:inline-flex; align-items:center; gap:11px; font-family:var(--display); font-weight:700; font-size:1.42rem; color:var(--ink); letter-spacing:-.02em; }
+.brand__mark{ width:38px; height:38px; flex:none; }
+.brand b{ color:var(--teal-700); font-weight:700; }
+
+.nav__links{ display:flex; gap:6px; margin-left:auto; }
+.nav__links a{
+  font-weight:600; font-size:.96rem; color:var(--ink-soft);
+  padding:9px 14px; border-radius:var(--pill); transition:color .2s, background .2s;
+}
+.nav__links a:hover{ color:var(--teal-700); background:rgba(111,205,190,.18); }
+.nav__cta{ display:flex; align-items:center; gap:12px; }
+.nav__phone{ display:inline-flex; align-items:center; gap:8px; font-weight:700; color:var(--ink); font-size:.95rem; }
+.nav__phone svg{ width:17px; height:17px; color:var(--teal-700); }
+
+/* Botón hamburguesa (móvil) */
+.burger{ display:none; width:46px; height:46px; border-radius:14px; border:1.5px solid var(--line); background:#fff; }
+.burger span{ display:block; width:20px; height:2px; background:var(--ink); margin:4px auto; border-radius:2px; transition:.3s var(--ease); }
+.burger.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+/* Panel de navegación móvil */
+.mobile-menu{
+  position:fixed; inset:74px 12px auto 12px; z-index:99;
+  background:#fff; border-radius:var(--r-lg); box-shadow:var(--sh-lg);
+  padding:18px; display:none; flex-direction:column; gap:4px;
+  border:1px solid var(--line);
+}
+.mobile-menu.open{ display:flex; animation:dropIn .35s var(--ease); }
+.mobile-menu a{ padding:13px 16px; border-radius:14px; font-weight:600; color:var(--ink-soft); }
+.mobile-menu a:hover{ background:var(--aqua-100); color:var(--teal-700); }
+.mobile-menu .btn{ margin-top:10px; }
+@keyframes dropIn{ from{ opacity:0; transform:translateY(-12px); } to{ opacity:1; transform:none; } }
+
+/* ============================================================
+   5. MOTIVO "PULSO → HUELLA" (firma de marca)
+   La salud (latido) y el cariño (huella) van de la pata.
+   ============================================================ */
+.pulse{ width:100%; max-width:340px; height:46px; color:var(--teal-500); }
+.pulse path, .pulse circle, .pulse ellipse{ stroke-dasharray:600; stroke-dashoffset:600; }
+.reveal.in .pulse path, .reveal.in .pulse circle, .reveal.in .pulse ellipse{ animation:draw 1.6s var(--ease) forwards; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+
+/* Separador decorativo entre secciones */
+.divider{ display:flex; justify-content:center; padding-block:8px; }
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+.hero{ padding-top:150px; padding-bottom:80px; position:relative; }
+.hero__bg{ position:absolute; inset:0; z-index:-1; overflow:hidden; }
+.hero__bg::before{ /* mancha menta superior derecha */
+  content:""; position:absolute; top:-160px; right:-120px; width:560px; height:560px;
+  background:radial-gradient(circle at center, rgba(111,205,190,.5), transparent 65%);
+  filter:blur(8px);
+}
+.hero__bg::after{ /* mancha melocotón inferior izquierda */
+  content:""; position:absolute; bottom:-180px; left:-140px; width:480px; height:480px;
+  background:radial-gradient(circle at center, rgba(238,156,126,.28), transparent 65%);
+}
+.hero__grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+
+.hero__badge{
+  display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--teal-700);
+  font-weight:700; font-size:.84rem; padding:8px 16px; border-radius:var(--pill);
+  box-shadow:var(--sh-sm); margin-bottom:24px;
+}
+.hero__badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--peach); box-shadow:0 0 0 4px rgba(238,156,126,.25); }
+.hero h1{ font-size:clamp(2.5rem, 1.6rem + 3.8vw, 4.3rem); margin-bottom:22px; }
+.hero h1 em{ font-style:italic; color:var(--teal-700); }
+.hero__lead{ font-size:1.18rem; color:var(--ink-soft); max-width:520px; margin-bottom:32px; }
+.hero__actions{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:30px; }
+.hero__rating{ display:flex; align-items:center; gap:12px; color:var(--muted); font-size:.95rem; }
+.hero__stars{ color:#F4B23E; letter-spacing:2px; font-size:1.05rem; }
+.hero__rating b{ color:var(--ink); }
+
+/* Imagen del hero sobre forma orgánica */
+.hero__media{ position:relative; }
+.hero__photo{
+  position:relative; aspect-ratio:4/4.4; width:100%;
+  border-radius:46% 54% 56% 44% / 56% 44% 56% 44%;
+  overflow:hidden; box-shadow:var(--sh-lg);
+  background:linear-gradient(135deg, var(--aqua-100), var(--sand));
+}
+.hero__photo img{ width:100%; height:100%; object-fit:cover; }
+.hero__media .blob-ring{
+  position:absolute; inset:-18px; z-index:-1;
+  border:2px dashed rgba(111,205,190,.6);
+  border-radius:46% 54% 56% 44% / 56% 44% 56% 44%;
+}
+/* Tarjetas flotantes sobre la foto */
+.float-card{
+  position:absolute; background:#fff; border-radius:var(--r-md);
+  box-shadow:var(--sh-md); padding:14px 18px; display:flex; align-items:center; gap:12px;
+}
+.float-card .ico{ width:42px; height:42px; flex:none; border-radius:13px; display:grid; place-items:center; color:#fff; }
+.float-card small{ display:block; color:var(--muted); font-size:.74rem; font-weight:600; }
+.float-card strong{ font-size:.96rem; color:var(--ink); }
+.float-card--a{ top:24px; left:-26px; }
+.float-card--a .ico{ background:var(--teal-700); }
+.float-card--b{ bottom:40px; right:-22px; }
+.float-card--b .ico{ background:var(--peach); }
+.float-anim{ animation:floaty 5s ease-in-out infinite; }
+.float-anim.b{ animation-delay:-2.5s; }
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+
+/* ============================================================
+   7. BLOQUE DE CONFIANZA (4 tarjetas con icono)
+   ============================================================ */
+.trust{ padding-top:10px; }
+.trust__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.trust__card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:28px 24px; box-shadow:var(--sh-sm); transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.trust__card:hover{ transform:translateY(-6px); box-shadow:var(--sh-md); }
+.trust__ico{ width:54px; height:54px; border-radius:16px; display:grid; place-items:center; background:var(--aqua-100); color:var(--teal-700); margin-bottom:16px; }
+.trust__ico svg{ width:26px; height:26px; }
+.trust__card h3{ font-family:var(--body); font-weight:800; font-size:1.06rem; margin-bottom:6px; }
+.trust__card p{ color:var(--muted); font-size:.95rem; }
+
+/* ============================================================
+   8. ¿POR QUÉ MIRAVET? (4 razones)
+   ============================================================ */
+.why{ background:var(--white); border-radius:var(--r-xl); }
+.reasons{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+.reason{
+  display:flex; gap:20px; padding:30px; border-radius:var(--r-lg);
+  background:var(--cream); border:1px solid var(--line); transition:transform .3s var(--ease), background .3s var(--ease);
+}
+.reason:hover{ transform:translateY(-4px); background:#fff; box-shadow:var(--sh-md); }
+.reason__num{ font-family:var(--display); font-size:2.4rem; line-height:1; color:var(--aqua-400); font-weight:600; flex:none; }
+.reason h3{ font-family:var(--body); font-weight:800; font-size:1.18rem; margin-bottom:8px; }
+.reason p{ color:var(--muted); font-size:.97rem; }
+
+/* ============================================================
+   9. SERVICIOS (con filtros tipo pestaña)
+   ============================================================ */
+.filters{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:42px; }
+.filter{
+  font-weight:700; font-size:.92rem; color:var(--ink-soft);
+  padding:10px 20px; border-radius:var(--pill); border:1.5px solid var(--line);
+  background:#fff; transition:.25s var(--ease);
+}
+.filter:hover{ border-color:var(--teal-500); color:var(--teal-700); }
+.filter.active{ background:var(--teal-700); border-color:var(--teal-700); color:#fff; box-shadow:var(--sh-sm); }
+
+.services{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.service{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:28px; box-shadow:var(--sh-sm);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+  display:flex; flex-direction:column;
+}
+.service:hover{ transform:translateY(-6px); box-shadow:var(--sh-md); border-color:rgba(111,205,190,.6); }
+.service__tag{ align-self:flex-start; font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-700); background:var(--aqua-100); padding:5px 11px; border-radius:var(--pill); margin-bottom:16px; }
+.service__ico{ width:50px; height:50px; border-radius:15px; display:grid; place-items:center; background:linear-gradient(135deg, var(--teal-700), var(--teal-500)); color:#fff; margin-bottom:16px; }
+.service__ico svg{ width:25px; height:25px; }
+.service h3{ font-family:var(--body); font-weight:800; font-size:1.18rem; margin-bottom:8px; }
+.service p{ color:var(--muted); font-size:.95rem; margin-bottom:18px; flex:1; }
+.service__link{ display:inline-flex; align-items:center; gap:7px; font-weight:700; color:var(--teal-700); font-size:.94rem; }
+.service__link svg{ width:16px; height:16px; transition:transform .25s var(--ease); }
+.service:hover .service__link svg{ transform:translateX(4px); }
+.service.is-hidden{ display:none; }
+
+/* ============================================================
+   10. EQUIPO
+   ============================================================ */
+.team{ background:var(--teal-900); border-radius:var(--r-xl); color:#fff; overflow:hidden; position:relative; }
+.team::after{ content:""; position:absolute; top:-120px; right:-120px; width:420px; height:420px; background:radial-gradient(circle, rgba(111,205,190,.22), transparent 65%); }
+.team .eyebrow{ color:var(--aqua-400); }
+.team .section__head h2{ color:#fff; }
+.team .section__head p{ color:rgba(255,255,255,.78); }
+.team__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; position:relative; z-index:1; }
+.member{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--r-lg); overflow:hidden; transition:transform .3s var(--ease), background .3s; }
+.member:hover{ transform:translateY(-6px); background:rgba(255,255,255,.1); }
+.member__photo{ aspect-ratio:1/1; background:linear-gradient(135deg, var(--teal-500), var(--teal-900)); overflow:hidden; }
+.member__photo img{ width:100%; height:100%; object-fit:cover; }
+.member__body{ padding:22px; }
+.member__role{ color:var(--aqua-400); font-weight:700; font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; margin-bottom:6px; }
+.member h3{ color:#fff; font-family:var(--body); font-weight:800; font-size:1.2rem; margin-bottom:10px; }
+.member p{ color:rgba(255,255,255,.74); font-size:.92rem; }
+.team__foot{ text-align:center; margin-top:42px; position:relative; z-index:1; }
+
+/* ============================================================
+   11. INSTALACIONES (CARRUSEL)
+   ============================================================ */
+/* Cabecera del carrusel: título a la izquierda, flechas a la derecha */
+.facilities__head{ display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:38px; }
+.facilities__head .section__head{ margin-bottom:0; }
+
+/* Controles (flechas) */
+.carousel__nav{ display:flex; gap:12px; flex:none; }
+.carousel__btn{
+  width:56px; height:56px; border-radius:50%; flex:none;
+  display:grid; place-items:center; background:#fff; color:var(--teal-700);
+  border:1.5px solid var(--line); box-shadow:var(--sh-sm);
+  transition:.25s var(--ease);
+}
+.carousel__btn:hover:not(:disabled){ background:var(--teal-700); color:#fff; border-color:var(--teal-700); transform:translateY(-2px); box-shadow:var(--sh-md); }
+.carousel__btn:disabled{ opacity:.4; cursor:not-allowed; }
+.carousel__btn svg{ width:22px; height:22px; }
+
+/* Viewport + pista deslizable con scroll-snap */
+.carousel{ position:relative; }
+.carousel__track{
+  display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+  scroll-behavior:smooth; padding:6px 4px 14px; margin:-6px -4px 0;
+  scrollbar-width:none; cursor:grab;
+}
+.carousel__track::-webkit-scrollbar{ display:none; }
+.carousel__track.dragging{ cursor:grabbing; scroll-behavior:auto; scroll-snap-type:none; }
+
+/* Cada tarjeta de instalación: ~42% del ancho en escritorio (se ven 2 + asomo) */
+.facility{
+  position:relative; flex:0 0 calc((100% - 24px) / 2.15); min-width:0;
+  scroll-snap-align:start; border-radius:var(--r-xl); overflow:hidden;
+  box-shadow:var(--sh-sm); aspect-ratio:5/4.4; background:var(--sand);
+}
+.facility img{ width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease); pointer-events:none; }
+.facility:hover img{ transform:scale(1.05); }
+.facility__overlay{
+  position:absolute; inset:0; padding:28px; color:#fff;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  background:linear-gradient(to top, rgba(12,74,67,.9) 0%, rgba(12,74,67,.28) 48%, rgba(12,74,67,0) 78%);
+}
+.facility__overlay span{ font-size:.74rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--aqua-400); margin-bottom:8px; }
+.facility__overlay h3{ font-family:var(--body); font-weight:800; color:#fff; font-size:1.28rem; margin-bottom:8px; line-height:1.2; }
+.facility__overlay p{ color:rgba(255,255,255,.85); font-size:.95rem; max-width:34ch; }
+
+/* Indicadores (puntos) + barra de progreso */
+.carousel__dots{ display:flex; justify-content:center; gap:9px; margin-top:30px; }
+.carousel__dots button{ width:9px; height:9px; border-radius:50%; background:var(--line); transition:.3s var(--ease); }
+.carousel__dots button.active{ width:30px; border-radius:6px; background:var(--teal-700); }
+
+/* ============================================================
+   12. FRANJA CTA
+   ============================================================ */
+.cta-band{ position:relative; overflow:hidden; background:linear-gradient(120deg, var(--teal-700), var(--teal-900)); border-radius:var(--r-xl); padding:64px 56px; color:#fff; }
+.cta-band::before{ content:""; position:absolute; top:-80px; left:-60px; width:340px; height:340px; background:radial-gradient(circle, rgba(111,205,190,.3), transparent 65%); }
+.cta-band__inner{ position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+.cta-band h2{ color:#fff; font-size:clamp(1.8rem,1.3rem+2vw,2.6rem); margin-bottom:10px; max-width:560px; }
+.cta-band p{ color:rgba(255,255,255,.82); }
+.cta-band__actions{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+.cta-band__meta{ display:flex; gap:24px; flex-wrap:wrap; margin-top:6px; }
+.cta-band__meta a, .cta-band__meta span{ display:inline-flex; align-items:center; gap:9px; color:#fff; font-weight:600; font-size:.96rem; }
+.cta-band__meta svg{ width:18px; height:18px; color:var(--aqua-400); }
+
+/* ============================================================
+   13. CONTACTO
+   ============================================================ */
+.contact__grid{ display:grid; grid-template-columns:1fr 1fr; gap:42px; align-items:start; }
+.contact__info p.lead{ color:var(--muted); margin-bottom:28px; }
+.info-list{ display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
+.info-item{ display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:16px 18px; }
+.info-item .ico{ width:42px; height:42px; flex:none; border-radius:13px; display:grid; place-items:center; background:var(--aqua-100); color:var(--teal-700); }
+.info-item .ico svg{ width:20px; height:20px; }
+.info-item small{ color:var(--muted); font-weight:600; font-size:.78rem; display:block; }
+.info-item strong{ font-size:1rem; color:var(--ink); font-weight:700; }
+.map{ border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--line); box-shadow:var(--sh-sm); height:240px; }
+.map iframe{ width:100%; height:100%; border:0; filter:grayscale(.15) contrast(1.02); }
+
+/* Formulario */
+.form{ background:#fff; border:1px solid var(--line); border-radius:var(--r-xl); padding:34px; box-shadow:var(--sh-md); }
+.form h3{ font-family:var(--body); font-weight:800; font-size:1.3rem; margin-bottom:6px; }
+.form > p{ color:var(--muted); font-size:.95rem; margin-bottom:22px; }
+.field{ margin-bottom:16px; }
+.field label{ display:block; font-weight:700; font-size:.86rem; margin-bottom:7px; color:var(--ink-soft); }
+.field input, .field textarea{
+  width:100%; font-family:inherit; font-size:1rem; color:var(--ink);
+  padding:13px 16px; border:1.5px solid var(--line); border-radius:var(--r-sm);
+  background:var(--cream); transition:border-color .2s, background .2s;
+}
+.field input:focus, .field textarea:focus{ outline:none; border-color:var(--teal-500); background:#fff; }
+.field textarea{ resize:vertical; min-height:110px; }
+.field--row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form__note{ font-size:.8rem; color:var(--muted); margin-top:4px; }
+.form__ok{ display:none; background:var(--aqua-100); color:var(--teal-900); border-radius:var(--r-sm); padding:14px 16px; font-weight:600; margin-top:8px; }
+.form__ok.show{ display:block; animation:dropIn .4s var(--ease); }
+
+/* --- Recordatorio de vacuna (.ics) --- */
+.vax{ display:grid; grid-template-columns:1fr 1fr; gap:42px; align-items:center;
+      background:linear-gradient(135deg,var(--aqua-100),#fff); border:1px solid var(--line);
+      border-radius:var(--r-xl); padding:44px; }
+.vax__intro h2{ font-size:clamp(1.7rem,1.3rem+1.6vw,2.4rem); margin:14px 0 14px; }
+.vax__intro p{ color:var(--muted); margin-bottom:22px; }
+.vax__perks{ display:flex; flex-direction:column; gap:12px; }
+.vax__perks li{ display:flex; align-items:center; gap:11px; font-weight:600; color:var(--ink-soft); font-size:.98rem; }
+.vax__perks svg{ width:20px; height:20px; flex:none; color:var(--teal-700); background:#fff; border-radius:50%; padding:3px; box-shadow:var(--sh-sm); }
+.vax__form{ margin:0; }
+.vax__form select{ width:100%; font-family:inherit; font-size:1rem; color:var(--ink);
+  padding:13px 16px; border:1.5px solid var(--line); border-radius:var(--r-sm); background:var(--cream); }
+.vax__form select:focus{ outline:none; border-color:var(--teal-500); background:#fff; }
+.vax__google{ display:block; text-align:center; margin-top:14px; font-weight:700; color:var(--teal-700); font-size:.94rem; }
+.vax__google:hover{ text-decoration:underline; }
+@media (max-width:980px){ .vax{ grid-template-columns:1fr; padding:30px; } }
+
+/* ============================================================
+   14. FOOTER
+   ============================================================ */
+.footer{ background:var(--ink); color:#fff; padding:70px 0 30px; margin-top:40px; }
+.footer__top{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:44px; border-bottom:1px solid rgba(255,255,255,.12); }
+.footer .brand{ color:#fff; margin-bottom:16px; }
+.footer .brand b{ color:var(--aqua-400); }
+.footer__claim{ color:rgba(255,255,255,.7); font-size:.96rem; max-width:280px; font-style:italic; font-family:var(--display); }
+.footer h4{ font-family:var(--body); font-weight:800; font-size:.84rem; letter-spacing:.1em; text-transform:uppercase; color:var(--aqua-400); margin-bottom:18px; }
+.footer ul li{ margin-bottom:11px; }
+.footer ul a, .footer__contact a, .footer__contact span{ color:rgba(255,255,255,.72); font-size:.95rem; transition:color .2s; }
+.footer ul a:hover{ color:#fff; }
+.footer__contact{ display:flex; flex-direction:column; gap:11px; }
+.footer__contact span{ display:flex; gap:9px; }
+.socials{ display:flex; gap:10px; margin-top:18px; }
+.socials a{ width:42px; height:42px; border-radius:13px; display:grid; place-items:center; background:rgba(255,255,255,.08); color:#fff; transition:.25s var(--ease); }
+.socials a:hover{ background:var(--teal-700); transform:translateY(-3px); }
+.socials svg{ width:19px; height:19px; }
+.footer__bottom{ padding-top:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; color:rgba(255,255,255,.55); font-size:.86rem; }
+
+/* ============================================================
+   15. ANIMACIÓN AL HACER SCROLL
+   ============================================================ */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal[data-delay="1"]{ transition-delay:.08s; }
+.reveal[data-delay="2"]{ transition-delay:.16s; }
+.reveal[data-delay="3"]{ transition-delay:.24s; }
+
+/* Placeholder por si una imagen no carga (degradado de marca + icono) */
+.img-fallback{ display:grid; place-items:center; background:linear-gradient(135deg,var(--aqua-100),var(--sand)); color:var(--teal-700); }
+.img-fallback svg{ width:34%; height:34%; opacity:.55; }
+
+/* ============================================================
+   16. RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .nav__links, .nav__phone{ display:none; }
+  .burger{ display:block; }
+  .hero__grid{ grid-template-columns:1fr; gap:60px; }
+  .hero__media{ max-width:440px; margin-inline:auto; }
+  .trust__grid{ grid-template-columns:repeat(2,1fr); }
+  .reasons{ grid-template-columns:1fr; }
+  .services{ grid-template-columns:repeat(2,1fr); }
+  .team__grid{ grid-template-columns:1fr; max-width:420px; margin-inline:auto; }
+  .facilities__head{ flex-direction:column; align-items:flex-start; }
+  .facility{ flex-basis:calc((100% - 24px) / 1.4); }
+  .contact__grid{ grid-template-columns:1fr; }
+  .footer__top{ grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:600px){
+  body{ font-size:16px; }
+  .section{ padding-block:64px; }
+  .container{ padding-inline:18px; }
+  .hero{ padding-top:120px; }
+  .hero__actions .btn{ flex:1; }
+  .trust__grid{ grid-template-columns:1fr; }
+  .services{ grid-template-columns:1fr; }
+  .field--row{ grid-template-columns:1fr; }
+  .cta-band{ padding:40px 26px; }
+  .cta-band__inner{ flex-direction:column; align-items:flex-start; }
+  .cta-band__actions{ width:100%; }
+  .cta-band__actions .btn{ width:100%; }
+  .facility{ flex-basis:calc((100% - 24px) / 1.08); aspect-ratio:4/4; }
+  .footer__top{ grid-template-columns:1fr; }
+  .float-card--a{ left:-10px; } .float-card--b{ right:-8px; }
+  .why{ border-radius:var(--r-lg); }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto; }
+  .reveal{ opacity:1; transform:none; }
+  .pulse path,.pulse circle,.pulse ellipse{ stroke-dashoffset:0; }
+}
+
+/* ============================================================
+   17. CALENDARIO INTERACTIVO DE CITAS
+   ============================================================ */
+.cal{
+  background:var(--cream); border:1.5px solid var(--line);
+  border-radius:var(--r-md); padding:16px; margin-top:6px;
+}
+.cal__header{
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;
+}
+.cal__header span{ font-weight:700; font-size:.98rem; color:var(--ink); }
+.cal__nav{
+  width:34px; height:34px; border-radius:50%;
+  border:1.5px solid var(--line); background:#fff;
+  display:grid; place-items:center; color:var(--teal-700);
+  transition:.2s var(--ease); flex:none;
+}
+.cal__nav:hover:not(:disabled){ background:var(--teal-700); color:#fff; border-color:var(--teal-700); }
+.cal__nav:disabled{ opacity:.35; cursor:not-allowed; }
+.cal__nav svg{ width:16px; height:16px; }
+.cal__weekdays{
+  display:grid; grid-template-columns:repeat(7,1fr);
+  gap:2px; margin-bottom:6px;
+}
+.cal__weekdays span{
+  text-align:center; font-weight:700; font-size:.74rem; color:var(--muted); padding:4px 0;
+}
+.cal__grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
+.cal__day{
+  aspect-ratio:1/1; border-radius:10px; font-weight:600; font-size:.86rem;
+  display:grid; place-items:center; transition:.2s var(--ease);
+  border:1.5px solid transparent; background:transparent; color:var(--ink);
+}
+.cal__day--empty{ visibility:hidden; pointer-events:none; }
+.cal__day--disabled{ color:var(--line); cursor:not-allowed; }
+.cal__day--available{ cursor:pointer; }
+.cal__day--available:hover{ background:var(--aqua-100); border-color:var(--teal-500); color:var(--teal-700); }
+.cal__day--today:not(.cal__day--selected){ border-color:var(--aqua-400); color:var(--teal-700); }
+.cal__day--selected{ background:var(--teal-700) !important; color:#fff !important; border-color:var(--teal-700) !important; }
+.cal__slots-label{ font-weight:700; font-size:.85rem; color:var(--ink-soft); margin:14px 0 10px; }
+.cal__slots-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+@media(max-width:400px){ .cal__slots-grid{ grid-template-columns:repeat(3,1fr); } }
+.cal__slot{
+  padding:9px 4px; border-radius:9px; border:1.5px solid var(--line);
+  font-weight:600; font-size:.84rem; color:var(--ink-soft); text-align:center;
+  background:#fff; transition:.2s var(--ease); cursor:pointer;
+}
+.cal__slot:hover{ border-color:var(--teal-500); color:var(--teal-700); background:var(--aqua-100); }
+.cal__slot--selected{ background:var(--teal-700); color:#fff; border-color:var(--teal-700); }
+/* Franja ya reservada por otra persona: bloqueada para todos */
+.cal__slot--taken{
+  background:repeating-linear-gradient(45deg,#F1EDE4,#F1EDE4 5px,#E9E3D6 5px,#E9E3D6 10px);
+  color:var(--muted); border-color:var(--line); cursor:not-allowed;
+  text-decoration:line-through; opacity:.85;
+}
+.cal__slot--taken:hover{ background:repeating-linear-gradient(45deg,#F1EDE4,#F1EDE4 5px,#E9E3D6 5px,#E9E3D6 10px); color:var(--muted); border-color:var(--line); }
+.cal__chosen{
+  display:flex; align-items:center; gap:10px; justify-content:space-between;
+  margin-top:14px; padding:12px 14px; background:var(--aqua-100);
+  border-radius:var(--r-sm); border:1.5px solid var(--aqua-400);
+}
+.cal__chosen strong{ font-size:.95rem; color:var(--teal-900); }
+.cal__chosen button{ font-size:.82rem; font-weight:700; color:var(--teal-700); text-decoration:underline; white-space:nowrap; }
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#inicio" class="brand" aria-label="Miravet, inicio">
+      <!-- Marca: huella dentro de un círculo -->
+      <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#0E6E63"/>
+        <ellipse cx="24" cy="29" rx="7" ry="6" fill="#fff"/>
+        <circle cx="15.5" cy="21" r="3" fill="#fff"/>
+        <circle cx="32.5" cy="21" r="3" fill="#fff"/>
+        <circle cx="19" cy="14.5" r="2.6" fill="#6FCDBE"/>
+        <circle cx="29" cy="14.5" r="2.6" fill="#6FCDBE"/>
+      </svg>
+      <span>Mira<b>vet</b></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#porque">¿Por qué?</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a class="nav__phone" href="tel:+34876655822" aria-label="Llamar al 876 65 58 22">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        876 65 58 22
+      </a>
+      <a class="btn btn--primary" href="#contacto">Pedir cita</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil">
+  <a href="#inicio">Inicio</a>
+  <a href="#porque">¿Por qué Miravet?</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#instalaciones">Instalaciones</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn--primary btn--block" href="#contacto">Pedir cita</a>
+</nav>
+
+<main>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+
+    <!-- Columna de texto -->
+    <div class="hero__text reveal">
+      <span class="hero__badge"><span class="dot"></span> Centro Veterinario en Miralbueno, Zaragoza</span>
+      <h1>Cuidamos de los que <em>más quieres</em></h1>
+      <p class="hero__lead">Medicina veterinaria avanzada con el trato humano y cercano que tu mascota merece. Diagnóstico propio, equipo especializado y espacios pensados para reducir su estrés.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contacto">
+          Pedir cita
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#servicios">Conocer servicios</a>
+      </div>
+      <div class="hero__rating">
+        <span class="hero__stars" aria-hidden="true">★★★★★</span>
+        <span><b>4,9 / 5</b> · más de 380 familias de Zaragoza nos confían su mascota</span>
+      </div>
+    </div>
+
+    <!-- Columna de imagen -->
+    <div class="hero__media reveal" data-delay="1">
+      <div class="blob-ring" aria-hidden="true"></div>
+      <div class="hero__photo">
+        <!-- 🔁 SUSTITUIR: foto real de una mascota feliz / consulta veterinaria luminosa -->
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
+             alt="Perro sano y feliz acariciado en una consulta veterinaria luminosa" loading="eager" />
+      </div>
+
+      <!-- Tarjeta flotante: diagnóstico -->
+      <div class="float-card float-card--a float-anim" aria-hidden="true">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <div><small>Resultados</small><strong>Diagnóstico en el día</strong></div>
+      </div>
+      <!-- Tarjeta flotante: cariño -->
+      <div class="float-card float-card--b float-anim b" aria-hidden="true">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2 5 5.2 5c1.9 0 3.2 1 3.8 2.2C9.6 6 10.9 5 12.8 5 16 5 17.6 8.4 16 11.8 13.5 16.4 12 21 12 21z"/></svg></span>
+        <div><small>Trato</small><strong>Cercano y sin estrés</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOQUE DE CONFIANZA
+     ============================================================ -->
+<section class="section trust" style="padding-block:30px 70px;">
+  <div class="container">
+    <div class="trust__grid">
+      <!-- Tarjeta 1 -->
+      <article class="trust__card reveal">
+        <div class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Medicina avanzada</h3>
+        <p>Tecnología de diagnóstico propia y técnicas quirúrgicas modernas.</p>
+      </article>
+      <!-- Tarjeta 2 -->
+      <article class="trust__card reveal" data-delay="1">
+        <div class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Equipo especializado</h3>
+        <p>Veterinarios con postgrado y dedicación a cada especialidad.</p>
+      </article>
+      <!-- Tarjeta 3 -->
+      <article class="trust__card reveal" data-delay="2">
+        <div class="trust__ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2 5 5.2 5c1.9 0 3.2 1 3.8 2.2C9.6 6 10.9 5 12.8 5 16 5 17.6 8.4 16 11.8 13.5 16.4 12 21 12 21z"/></svg></div>
+        <h3>Trato cercano</h3>
+        <p>Te explicamos el qué, el porqué y el cómo, con tiempo y calma.</p>
+      </article>
+      <!-- Tarjeta 4 -->
+      <article class="trust__card reveal" data-delay="3">
+        <div class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Instalaciones modernas</h3>
+        <p>Zonas separadas para perros y gatos, pensadas para su bienestar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ¿POR QUÉ MIRAVET?
+     ============================================================ -->
+<div class="container">
+  <section class="section why" id="porque">
+    <div class="container">
+      <div class="section__head center reveal">
+        <span class="eyebrow">¿Por qué Miravet?</span>
+        <h2>Cuatro razones para confiarnos a quien más quieres</h2>
+        <p>Cada decisión que tomamos en la clínica responde a estos cuatro principios innegociables.</p>
+      </div>
+
+      <div class="reasons">
+        <article class="reason reveal">
+          <span class="reason__num">01</span>
+          <div>
+            <h3>Atención personalizada</h3>
+            <p>Dedicamos el tiempo necesario a cada consulta. Escuchamos, exploramos y te acompañamos en cada decisión sobre tu mascota.</p>
+          </div>
+        </article>
+        <article class="reason reveal" data-delay="1">
+          <span class="reason__num">02</span>
+          <div>
+            <h3>Diagnóstico preciso</h3>
+            <p>Radiología digital, ecografía y laboratorio propios. Sin derivaciones ni esperas: resultados claros, muchas veces en el mismo día.</p>
+          </div>
+        </article>
+        <article class="reason reveal" data-delay="2">
+          <span class="reason__num">03</span>
+          <div>
+            <h3>Especialidades veterinarias</h3>
+            <p>Traumatología, oncología, cirugía avanzada, odontología y más, con la misma exigencia bajo un mismo techo.</p>
+          </div>
+        </article>
+        <article class="reason reveal" data-delay="3">
+          <span class="reason__num">04</span>
+          <div>
+            <h3>Acompañamiento en cada etapa</h3>
+            <p>Desde el primer cachorro hasta la edad senior. Cuidamos su salud a lo largo de toda su vida, contigo al lado.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Separador con la firma de marca: pulso → huella -->
+<div class="divider reveal"><svg class="pulse" viewBox="0 0 340 46" fill="none" aria-hidden="true">
+  <path d="M0 23 H120 L132 8 L150 38 L166 14 L178 23 H250" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="288" cy="30" rx="11" ry="9" fill="currentColor"/>
+  <circle cx="276" cy="18" r="4.2" fill="currentColor"/>
+  <circle cx="300" cy="18" r="4.2" fill="currentColor"/>
+  <circle cx="266" cy="27" r="3.6" fill="currentColor"/>
+  <circle cx="310" cy="27" r="3.6" fill="currentColor"/>
+</svg></div>
+
+<!-- ============================================================
+     SERVICIOS (con filtros)
+     ============================================================ -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section__head center reveal">
+      <span class="eyebrow">Servicios médicos</span>
+      <h2>Todo lo que tu mascota necesita, bajo un mismo techo</h2>
+      <p>Medicina general y especialidades, con la misma exigencia en cada servicio.</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters reveal" id="filters" role="tablist" aria-label="Filtrar servicios">
+      <button class="filter active" data-filter="all">Todos</button>
+      <button class="filter" data-filter="dia">Día a día</button>
+      <button class="filter" data-filter="diagnostico">Diagnóstico</button>
+      <button class="filter" data-filter="cirugia">Cirugía</button>
+      <button class="filter" data-filter="especialidad">Especialidades</button>
+    </div>
+
+    <!-- Tarjetas -->
+    <div class="services" id="services">
+
+      <article class="service reveal" data-cat="dia">
+        <span class="service__tag">Día a día</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6zM21 3h-6v18h6zM15 7H9v14h6z"/></svg></div>
+        <h3>Consulta general</h3>
+        <p>Revisión completa de tu mascota: exploración, dudas y un plan de salud claro adaptado a su edad y carácter.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service reveal" data-cat="dia" data-delay="1">
+        <span class="service__tag">Día a día</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Medicina preventiva</h3>
+        <p>Vacunación personalizada, desparasitación y chequeos para que llegue sano a cada etapa de su vida.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service reveal" data-cat="diagnostico" data-delay="2">
+        <span class="service__tag">Diagnóstico</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>Diagnóstico por imagen</h3>
+        <p>Radiología digital y ecografía de alta definición. Resultados al momento, sin desplazamientos externos.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service reveal" data-cat="cirugia">
+        <span class="service__tag">Cirugía</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5 21 10l-2 2-6.5-6.5zM3 21l9-9M3 21l3.5-1L12 14.5"/><circle cx="18" cy="6" r="0"/></svg></div>
+        <h3>Cirugía</h3>
+        <p>Quirófano con estándares hospitalarios, monitorización completa y anestesia inhalatoria para intervenciones seguras.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service reveal" data-cat="dia" data-delay="1">
+        <span class="service__tag">Día a día</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Hospitalización</h3>
+        <p>Boxes individuales con climatización controlada y vigilancia veterinaria constante durante el postoperatorio.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="service reveal" data-cat="especialidad" data-delay="2">
+        <span class="service__tag">Especialidad</span>
+        <div class="service__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2a.3.3 0 0 0-.2.3M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><path d="M8 15a3 3 0 1 0-6 0M14 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0M8 2v6a4 4 0 0 0 4 4 4 4 0 0 0 4-4V6"/></svg></div>
+        <h3>Especialidades veterinarias</h3>
+        <p>Traumatología, oncología, odontología, endocrinología y cirugía mínimamente invasiva con profesionales dedicados.</p>
+        <a class="service__link" href="#contacto">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EQUIPO
+     ============================================================ -->
+<div class="container">
+  <section class="section team" id="equipo">
+    <div class="container">
+      <div class="section__head center reveal">
+        <span class="eyebrow">El equipo</span>
+        <h2>Un equipo que combina experiencia, vocación y cariño</h2>
+        <p>En Miravet trabajamos para que cada visita sea tranquila, clara y segura, tanto para tu mascota como para ti.</p>
+      </div>
+
+      <div class="team__grid">
+        <!-- Miembro 1 — 🔁 sustituir foto -->
+        <article class="member reveal">
+          <div class="member__photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=500&q=80" alt="Auxiliar veterinaria del equipo de Miravet" loading="lazy" /></div>
+          <div class="member__body">
+            <div class="member__role">Auxiliar Veterinaria · Quirúrgica</div>
+            <h3>Noelia</h3>
+            <p>Apoyo fundamental en consulta y quirófano. Su formación en enfermería refuerza la atención al detalle en cada paciente.</p>
+          </div>
+        </article>
+        <!-- Miembro 2 -->
+        <article class="member reveal" data-delay="1">
+          <div class="member__photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Veterinario responsable de traumatología en Miravet" loading="lazy" /></div>
+          <div class="member__body">
+            <div class="member__role">Veterinario · Traumatología</div>
+            <h3>Juan</h3>
+            <p>Responsable de traumatología y cirugía de tejidos blandos. Postgrado y amplia experiencia hospitalaria para cada caso quirúrgico.</p>
+          </div>
+        </article>
+        <!-- Miembro 3 -->
+        <article class="member reveal" data-delay="2">
+          <div class="member__photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=80" alt="Veterinaria responsable de oncología en Miravet" loading="lazy" /></div>
+          <div class="member__body">
+            <div class="member__role">Veterinaria · Oncología</div>
+            <h3>Marta</h3>
+            <p>Responsable de citología y oncología, con más de 6 años de experiencia clínica. Manejo integral de pacientes complejos.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="team__foot reveal">
+        <a class="btn btn--light" href="#contacto">Conoce al equipo</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     INSTALACIONES (CARRUSEL deslizable)
+     ============================================================ -->
+<section class="section" id="instalaciones">
+  <div class="container">
+
+    <!-- Cabecera: título + flechas de navegación -->
+    <div class="facilities__head reveal">
+      <div class="section__head" style="max-width:640px;">
+        <span class="eyebrow">Instalaciones</span>
+        <h2>Un centro pensado al detalle. Para ellos, y para ti</h2>
+        <p>Espacios diseñados para reducir el estrés, con tecnología médica avanzada y zonas separadas para perros y gatos.</p>
+      </div>
+      <div class="carousel__nav">
+        <button class="carousel__btn" id="facPrev" aria-label="Anterior instalación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel__btn" id="facNext" aria-label="Siguiente instalación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="carousel reveal" data-delay="1">
+      <div class="carousel__track" id="facTrack" tabindex="0" aria-label="Carrusel de instalaciones" role="region">
+
+        <!-- 🔁 Sustituir cada src por una foto real de la instalación -->
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80" alt="Sala de espera luminosa y tranquila con acuario" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>Sala de espera</span>
+            <h3>Una espera que no se siente como una espera</h3>
+            <p>Acuario de agua dulce que separa la zona de perros y gatos y aporta calma en un ambiente sereno.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80" alt="Quirófano veterinario con lámpara LED y monitorización" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>Quirófano</span>
+            <h3>Cirugía con estándares hospitalarios</h3>
+            <p>Lámpara LED quirúrgica, monitor multiparamétrico y equipo de anestesia profesional.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=800&q=80" alt="Boxes individuales de hospitalización para perros" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>UCI Perros</span>
+            <h3>Hospitalización con vigilancia constante</h3>
+            <p>Boxes individuales con climatización controlada y supervisión veterinaria en el postoperatorio.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80" alt="Espacio felino separado y silencioso para gatos" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>UCI Gatos</span>
+            <h3>Un espacio felino, separado y silencioso</h3>
+            <p>Boxes con incubadora climática para gatos, lejos del ruido canino. Menos estrés, mejor recuperación.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?auto=format&fit=crop&w=800&q=80" alt="Quirófano dental veterinario con equipo específico" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>Quirófano dental</span>
+            <h3>Odontología veterinaria avanzada</h3>
+            <p>Sala independiente con equipo dental específico: limpiezas, extracciones y cirugía oral monitorizada.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Sala de ecografía con ecógrafo de última generación" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>Sala de ecografía</span>
+            <h3>Diagnóstico por imagen en alta definición</h3>
+            <p>Ecógrafo de última generación, imágenes claras para diagnósticos certeros.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="facility">
+          <img src="https://images.unsplash.com/photo-1607923432780-7a9c30adcb72?auto=format&fit=crop&w=800&q=80" alt="Laboratorio propio para analíticas veterinarias" loading="lazy" />
+          <figcaption class="facility__overlay">
+            <span>Laboratorio propio</span>
+            <h3>Analíticas en minutos, no en días</h3>
+            <p>Sistema completo de hemograma, bioquímica y microscopía in situ. Sin esperar a derivar.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Indicadores -->
+      <div class="carousel__dots" id="facDots" aria-label="Ir a instalación"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FRANJA CTA
+     ============================================================ -->
+<div class="container">
+  <section class="cta-band reveal">
+    <div class="cta-band__inner">
+      <div>
+        <h2>¿Necesitas pedir cita o resolver una duda?</h2>
+        <p>Estamos en Miralbueno para cuidar de tu mascota. Escríbenos o llámanos y te atendemos con calma.</p>
+        <div class="cta-band__meta">
+          <a href="tel:+34876655822"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> 876 65 58 22</a>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Miralbueno, Zaragoza</span>
+        </div>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light" href="#contacto">Contactar con Miravet</a>
+        <a class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" href="tel:+34876655822">Llámanos ahora</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     CONTACTO
+     ============================================================ -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section__head center reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2>Pide tu cita en Miravet</h2>
+      <p>Déjanos tus datos y los de tu mascota. Te contactamos para confirmar el mejor momento.</p>
+    </div>
+
+    <div class="contact__grid">
+      <!-- Información + mapa -->
+      <div class="contact__info reveal">
+        <p class="lead">Estamos en el barrio de Miralbueno, fáciles de encontrar y con un equipo listo para escucharte.</p>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Dirección</small><strong>C. de los Lagos de Coronas, 47 · 50011 Zaragoza</strong></div>
+          </div>
+          <div class="info-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+            <div><small>Teléfono</small><strong>876 65 58 22</strong></div>
+          </div>
+          <div class="info-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
+            <div><small>Email</small><strong>info@miravetcv.com</strong></div>
+          </div>
+          <div class="info-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <div><small>Horario</small><strong>L–V 8:30–20:30 · Sáb 11:00–14:00</strong></div>
+          </div>
+        </div>
+        <!-- Mapa embebido (sin clave API) -->
+        <div class="map">
+          <iframe
+            title="Ubicación de Miravet en Zaragoza"
+            src="https://maps.google.com/maps?q=Lagos%20de%20Coronas%2047%20Zaragoza&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <form class="form reveal" data-delay="1" id="citaForm" novalidate>
+        <h3>Solicita tu cita</h3>
+        <p>Respuesta normalmente en menos de 24 horas laborables.</p>
+
+        <div class="field">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellidos" required />
+        </div>
+
+        <div class="field field--row">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="600 000 000" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mascota">Nombre de tu mascota</label>
+          <input type="text" id="mascota" name="mascota" placeholder="Luna, Toby…" />
+        </div>
+
+        <!-- Selector de fecha y hora -->
+        <div class="field" id="fieldCal">
+          <label>Día y hora de la cita *</label>
+          <div class="cal" id="cal">
+            <div class="cal__header">
+              <button type="button" class="cal__nav" id="calPrevBtn" aria-label="Mes anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <span id="calMonthLabel"></span>
+              <button type="button" class="cal__nav" id="calNextBtn" aria-label="Mes siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div class="cal__weekdays">
+              <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+            </div>
+            <div class="cal__grid" id="calGrid"></div>
+            <div id="calSlotsWrap" style="display:none">
+              <p class="cal__slots-label">Horarios disponibles — L a V, 09:00 a 17:00</p>
+              <div class="cal__slots-grid" id="calSlotsGrid"></div>
+            </div>
+            <div class="cal__chosen" id="calChosen" style="display:none">
+              <strong id="calChosenText"></strong>
+              <button type="button" id="calClearBtn">Cambiar</button>
+            </div>
+          </div>
+          <p class="form__note" id="calError" style="color:#E06A4E;display:none">Por favor selecciona un día y hora para tu cita.</p>
+        </div>
+        <input type="hidden" id="citaFecha" name="fecha" />
+        <input type="hidden" id="citaHora" name="hora" />
+
+        <div class="field">
+          <label for="mensaje">Información adicional</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Edad, Peso, Alergias, Raza, Sexo, etc.."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Confirmar cita
+        </button>
+        <p class="form__note">Al confirmar, se abrirá Google Calendar para guardar la cita en la agenda de la clínica. No compartimos tus datos.</p>
+        <div class="form__ok" id="formOk">✅ ¡Solicitud enviada! Se ha abierto Google Calendar para añadir la cita a la agenda de Miravet. Recibirás confirmación en breve.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RECORDATORIO DE VACUNA (.ics) — sin cuenta ni backend
+     El cliente rellena los datos y descarga un evento para SU calendario.
+     ============================================================ -->
+<section class="section" id="recordatorio" style="padding-top:0;">
+  <div class="container">
+    <div class="vax">
+      <div class="vax__intro reveal">
+        <span class="eyebrow">Recordatorio gratuito</span>
+        <h2>No se te pasará la próxima vacuna</h2>
+        <p>Pon los datos y añade el aviso directamente a tu calendario (Google, Apple o Outlook). Te avisará él solo, con la antelación que elijas. No guardamos ningún dato.</p>
+        <ul class="vax__perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Funciona en cualquier calendario</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 100 % privado: nada sale de tu móvil</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sin registros ni contraseñas</li>
+        </ul>
+      </div>
+
+      <!-- Mini-formulario: el usuario rellena estos campos -->
+      <form class="form vax__form reveal" data-delay="1" id="vaxForm" novalidate>
+        <h3>Crea tu recordatorio</h3>
+        <p>Rellena los datos de tu mascota y su próxima vacuna.</p>
+
+        <div class="field">
+          <label for="vaxPet">Nombre de tu mascota *</label>
+          <input type="text" id="vaxPet" placeholder="Luna, Toby…" required />
+        </div>
+
+        <div class="field">
+          <label for="vaxType">Motivo / tipo de vacuna</label>
+          <input type="text" id="vaxType" placeholder="Vacuna anual, rabia, desparasitación…" />
+        </div>
+
+        <div class="field field--row">
+          <div>
+            <label for="vaxDate">Fecha *</label>
+            <input type="date" id="vaxDate" required />
+          </div>
+          <div>
+            <label for="vaxTime">Hora <span style="font-weight:500;color:var(--muted)">(opcional)</span></label>
+            <input type="time" id="vaxTime" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="vaxWarn">Avísame con antelación</label>
+          <select id="vaxWarn">
+            <option value="-P1D">1 día antes</option>
+            <option value="-P3D">3 días antes</option>
+            <option value="-P7D" selected>1 semana antes</option>
+            <option value="-P14D">2 semanas antes</option>
+          </select>
+        </div>
+
+        <!-- Opción PRINCIPAL: Google Calendar -->
+        <button type="submit" class="btn btn--primary btn--block" id="vaxGoogleBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Añadir a Google Calendar
+        </button>
+        <div class="form__ok" id="vaxOk">✅ ¡Listo! Hemos abierto Google Calendar con tu recordatorio. Solo tienes que pulsar «Guardar».</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <!-- Marca + claim -->
+      <div>
+        <a href="#inicio" class="brand">
+          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="23" fill="#0E6E63"/>
+            <ellipse cx="24" cy="29" rx="7" ry="6" fill="#fff"/>
+            <circle cx="15.5" cy="21" r="3" fill="#fff"/><circle cx="32.5" cy="21" r="3" fill="#fff"/>
+            <circle cx="19" cy="14.5" r="2.6" fill="#6FCDBE"/><circle cx="29" cy="14.5" r="2.6" fill="#6FCDBE"/>
+          </svg>
+          <span>Mira<b>vet</b></span>
+        </a>
+        <p class="footer__claim">«Donde la salud y el cariño van de la pata.»</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/34876655822" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.5v-.4c0-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9.3c0 1.2.9 2.4 1 2.6s1.7 2.7 4.2 3.8a14 14 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1c.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Centro -->
+      <div>
+        <h4>Centro</h4>
+        <ul>
+          <li><a href="#porque">¿Por qué Miravet?</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#instalaciones">Instalaciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Enlaces -->
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#contacto">Pedir cita</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#">Planes de salud</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h4>Contacto</h4>
+        <div class="footer__contact">
+          <span><svg viewBox="0 0 24 24" width="18" fill="none" stroke="#6FCDBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> C. de los Lagos de Coronas, 47 · Zaragoza</span>
+          <a href="tel:+34876655822"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="#6FCDBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>876 65 58 22</a>
+          <a href="mailto:info@miravetcv.com">info@miravetcv.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2025 Centro Veterinario Miravet · Medicina avanzada con trato humano.</span>
+      <span>Diseño inspirado · Zaragoza</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Firebase (Realtime Database) — guarda qué franjas están ocupadas.
+     Se carga ANTES del script principal. Si no carga (sin conexión),
+     la web sigue funcionando: simplemente no se bloquean franjas.
+     ============================================================ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+
+<script>
+/* ============================================================
+   JS · Comportamientos de la página (vanilla)
+   ============================================================ */
+
+/* ============================================================
+   0. CONFIGURACIÓN  ·  ⚙️ AQUÍ PEGAS TUS DOS CLAVES
+   ============================================================ */
+
+/* (A) FIREBASE — copia el objeto "firebaseConfig" que te da la consola de
+   Firebase (Configuración del proyecto → Tus apps → Web). Debe incluir
+   databaseURL (Realtime Database). Mientras tenga "TU_..." el bloqueo de
+   franjas queda desactivado y la web funciona igual. */
+const firebaseConfig = {
+  apiKey: "AIzaSyDQpdpHqymdcZgMX_tUapuAsrL4ZMRECNA",
+  authDomain: "miravet-citas.firebaseapp.com",
+  databaseURL: "https://miravet-citas-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "miravet-citas",
+  storageBucket: "miravet-citas.firebasestorage.app",
+  messagingSenderId: "804635758398",
+  appId: "1:804635758398:web:36eed7c51a7637ca62266f"
+};
+
+/* (B) WEB3FORMS — pega tu Access Key (la generas gratis en web3forms.com
+   con el email de la clínica). Es pública, no pasa nada por verla aquí:
+   solo sirve para enviarte emails a TI. Mientras tenga "TU_..." no se
+   enviará el correo. */
+const WEB3FORMS_ACCESS_KEY = "1e3da288-49b5-4296-a07e-b3f91c7a560c";
+
+/* ---- Inicialización de Firebase y caché de franjas ocupadas ---- */
+const ocupadas = {};                              // { "2026-07-03": { "10:00": true } }
+let fbDB = null;
+window._slotTaken = (f, h) => !!(ocupadas[f] && ocupadas[f][h]);   // ¿franja ocupada?
+
+try {
+  if (typeof firebase !== 'undefined' && !FIREBASE_CONFIG.databaseURL.includes('TU_')) {
+    firebase.initializeApp(FIREBASE_CONFIG);
+    fbDB = firebase.database();
+    // Escucha en vivo: si otra persona reserva, se actualiza al instante
+    fbDB.ref('citas_ocupadas').on('value', (snap) => {
+      Object.keys(ocupadas).forEach(k => delete ocupadas[k]);
+      const val = snap.val() || {};
+      Object.keys(val).forEach(f => {
+        ocupadas[f] = {};
+        Object.keys(val[f]).forEach(hk => { ocupadas[f][hk.replace('-', ':')] = true; });
+      });
+      if (window._calRefreshSlots) window._calRefreshSlots();   // repinta las franjas
+    });
+  }
+} catch (e) { console.warn('Firebase no disponible:', e); }
+
+/* Marca una franja como ocupada en la nube (SOLO fecha y hora, sin datos personales) */
+window._marcarOcupada = (fecha, hora) => {
+  if (!fbDB) return Promise.resolve(false);
+  return fbDB.ref('citas_ocupadas/' + fecha + '/' + hora.replace(':', '-')).set(true)
+            .then(() => true).catch(() => false);
+};
+
+/* Envía los datos de la cita por email a la clínica vía Web3Forms */
+window._enviarCorreoClinica = (d) => {
+  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.includes('TU_')) {
+    console.warn('Web3Forms: falta configurar WEB3FORMS_ACCESS_KEY'); return;
+  }
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: 'Nueva cita web · ' + d.fecha + ' a las ' + d.hora,
+      from_name: 'Web Miravet',
+      'Propietario': d.nombre,
+      'Email': d.email,
+      'Teléfono': d.tel,
+      'Mascota': d.mascota || '—',
+      'Día de la cita': d.fecha,
+      'Hora de la cita': d.hora,
+      'Motivo': d.msg || '—',
+      botcheck: ''   // honeypot antispam
+    })
+  }).catch(err => console.warn('Web3Forms error:', err));
+};
+
+/* --- 1. Header: sombra/fondo al hacer scroll --- */
+const header = document.getElementById('header');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive:true });
+
+/* --- 2. Menú móvil --- */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const toggleMenu = (open) => {
+  const willOpen = open ?? !mobileMenu.classList.contains('open');
+  mobileMenu.classList.toggle('open', willOpen);
+  burger.classList.toggle('open', willOpen);
+  burger.setAttribute('aria-expanded', willOpen);
+};
+burger.addEventListener('click', () => toggleMenu());
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+/* --- 3. Filtros de servicios --- */
+const filterBtns = document.querySelectorAll('.filter');
+const serviceCards = document.querySelectorAll('#services .service');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    serviceCards.forEach(card => {
+      const show = (f === 'all' || card.dataset.cat === f);
+      card.classList.toggle('is-hidden', !show);
+    });
+  });
+});
+
+/* --- 4. Animación al hacer scroll (IntersectionObserver) --- */
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:0.12, rootMargin:'0px 0px -50px 0px' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in')); // fallback
+}
+
+/* --- 5. Formulario de cita + integración con Google Calendar --- */
+const form = document.getElementById('citaForm');
+const formOk = document.getElementById('formOk');
+form.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+
+  // Validación de campos obligatorios
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(inp => {
+    if (!inp.value.trim() || (inp.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value))) {
+      inp.style.borderColor = '#E06A4E'; valid = false;
+    } else { inp.style.borderColor = ''; }
+  });
+
+  // Validación de fecha/hora del calendario
+  const fecha = document.getElementById('citaFecha').value;
+  const hora  = document.getElementById('citaHora').value;
+  const calErr = document.getElementById('calError');
+  if (!fecha || !hora) { calErr.style.display = 'block'; valid = false; }
+  else { calErr.style.display = 'none'; }
+
+  if (!valid) return;
+
+  // Reverificación: ¿alguien ocupó esta franja mientras rellenabas el formulario?
+  if (window._slotTaken && window._slotTaken(fecha, hora)) {
+    calErr.textContent = 'Vaya, esa franja acaba de reservarse. Por favor elige otra hora.';
+    calErr.style.display = 'block';
+    if (window._calRefreshSlots) window._calRefreshSlots();
+    return;
+  }
+
+  // Construye la URL de Google Calendar con los datos de la cita
+  const startDT = fecha.replace(/-/g,'') + 'T' + hora.replace(':','') + '00';
+  const [hh, mm] = hora.split(':').map(Number);
+  const endMin   = hh * 60 + mm + 30;
+  const endDT    = fecha.replace(/-/g,'') + 'T'
+    + String(Math.floor(endMin / 60)).padStart(2,'0')
+    + String(endMin % 60).padStart(2,'0') + '00';
+
+  const nombre   = document.getElementById('nombre').value.trim();
+  const emailVal = document.getElementById('email').value.trim();
+  const tel      = document.getElementById('telefono').value.trim();
+  const mascota  = document.getElementById('mascota').value.trim();
+  const msg      = document.getElementById('mensaje').value.trim();
+
+  const title   = 'Cita Miravet: ' + (mascota ? mascota + ' (' + nombre + ')' : nombre);
+  const details = [
+    'Propietario: ' + nombre,
+    tel      ? 'Tel: '     + tel      : '',
+    emailVal ? 'Email: '   + emailVal : '',
+    mascota  ? 'Mascota: ' + mascota  : '',
+    msg      ? 'Motivo: '  + msg      : ''
+  ].filter(Boolean).join('\n');
+
+  // ================================================================
+  // 📧 CORREO DEL CALENDARIO — cambia aquí para usar otra cuenta
+  const CALENDAR_EMAIL = 'patricio.merayo@gmail.com';
+  // ================================================================
+
+  const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text='     + encodeURIComponent(title)
+    + '&dates='    + startDT + '/' + endDT
+    + '&details='  + encodeURIComponent(details)
+    + '&location=' + encodeURIComponent('C. de los Lagos de Coronas, 47, 50011 Zaragoza')
+    + '&authuser=' + encodeURIComponent(CALENDAR_EMAIL);
+
+  window.open(gcalUrl, '_blank', 'noopener');
+
+  // 1) Bloquea la franja en la nube para el resto de usuarios (sin datos personales)
+  if (window._marcarOcupada) window._marcarOcupada(fecha, hora);
+
+  // 2) Envía a la clínica el email con TODOS los datos de la cita (privado)
+  if (window._enviarCorreoClinica) {
+    window._enviarCorreoClinica({ nombre, email: emailVal, tel, mascota, fecha, hora, msg });
+  }
+
+  formOk.classList.add('show');
+  form.reset();
+  if (window._calReset) window._calReset();
+  setTimeout(() => formOk.classList.remove('show'), 8000);
+});
+
+/* --- 6. Calendario interactivo de selección de cita --- */
+(function(){
+  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const DIAS  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  const HORA_INICIO = 9, HORA_FIN = 17, INTERVALO = 30;
+
+  let año, mes, diaSeleccionado = null, horaSeleccionada = null;
+
+  function init(){
+    const hoy = new Date();
+    año = hoy.getFullYear(); mes = hoy.getMonth();
+    renderCal();
+  }
+
+  function renderCal(){
+    const grid  = document.getElementById('calGrid');
+    const label = document.getElementById('calMonthLabel');
+    if (!grid || !label) return;
+
+    label.textContent = MESES[mes] + ' ' + año;
+
+    const primerDia   = new Date(año, mes, 1).getDay();
+    const offset      = primerDia === 0 ? 6 : primerDia - 1;
+    const diasEnMes   = new Date(año, mes + 1, 0).getDate();
+    const hoy         = new Date(); hoy.setHours(0,0,0,0);
+
+    grid.innerHTML = '';
+
+    // Celdas vacías antes del primer día
+    for (let i = 0; i < offset; i++){
+      const e = document.createElement('button');
+      e.type = 'button'; e.className = 'cal__day cal__day--empty';
+      e.disabled = true; grid.appendChild(e);
+    }
+
+    // Días del mes
+    for (let d = 1; d <= diasEnMes; d++){
+      const fecha    = new Date(año, mes, d);
+      const dow      = fecha.getDay();
+      const esPasado = fecha < hoy;
+      const esFinSem = dow === 0 || dow === 6;
+      const esHoy    = fecha.getTime() === hoy.getTime();
+      const esSel    = diaSeleccionado && fecha.getTime() === diaSeleccionado.getTime();
+
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.textContent = d; btn.className = 'cal__day';
+      btn.setAttribute('aria-label', d + ' de ' + MESES[mes] + ' de ' + año);
+
+      if (esSel) {
+        btn.classList.add('cal__day--selected');
+      } else if (esPasado || esFinSem) {
+        btn.classList.add('cal__day--disabled'); btn.disabled = true;
+      } else {
+        btn.classList.add('cal__day--available');
+        if (esHoy) btn.classList.add('cal__day--today');
+        btn.addEventListener('click', () => seleccionarDia(fecha));
+      }
+      grid.appendChild(btn);
+    }
+
+    // Desactiva botón "anterior" si estamos en el mes actual o anterior
+    const hoyRef = new Date();
+    document.getElementById('calPrevBtn').disabled =
+      (año === hoyRef.getFullYear() && mes <= hoyRef.getMonth());
+
+    renderHoras();
+  }
+
+  function seleccionarDia(fecha){
+    diaSeleccionado = fecha; horaSeleccionada = null;
+    document.getElementById('citaHora').value = '';
+    document.getElementById('calChosen').style.display = 'none';
+    renderCal();
+    const wrap = document.getElementById('calSlotsWrap');
+    wrap.style.display = '';
+    wrap.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+
+  function renderHoras(){
+    const wrap = document.getElementById('calSlotsWrap');
+    if (!diaSeleccionado){ wrap.style.display = 'none'; return; }
+
+    const grid  = document.getElementById('calSlotsGrid');
+    grid.innerHTML = '';
+    const ahora = new Date();
+    const esHoy = diaSeleccionado.toDateString() === ahora.toDateString();
+    const pad = n => String(n).padStart(2,'0');
+    const fechaStr = diaSeleccionado.getFullYear() + '-' + pad(diaSeleccionado.getMonth()+1) + '-' + pad(diaSeleccionado.getDate());
+
+    for (let h = HORA_INICIO; h < HORA_FIN; h++){
+      for (let m = 0; m < 60; m += INTERVALO){
+        if (esHoy){
+          const t = new Date(diaSeleccionado); t.setHours(h, m, 0, 0);
+          if (t <= ahora) continue;
+        }
+        const slot = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0');
+        const btn  = document.createElement('button');
+        btn.type = 'button'; btn.textContent = slot; btn.className = 'cal__slot';
+
+        // ¿Franja ya reservada por otra persona? → bloqueada para todos
+        if (window._slotTaken && window._slotTaken(fechaStr, slot)){
+          btn.classList.add('cal__slot--taken');
+          btn.disabled = true;
+          btn.title = 'Esta franja ya está reservada';
+        } else {
+          if (horaSeleccionada === slot) btn.classList.add('cal__slot--selected');
+          btn.addEventListener('click', () => seleccionarHora(slot));
+        }
+        grid.appendChild(btn);
+      }
+    }
+  }
+  // Permite a Firebase repintar las franjas cuando cambian los datos en la nube
+  window._calRefreshSlots = renderHoras;
+
+  function seleccionarHora(slot){
+    horaSeleccionada = slot;
+    const pad = n => String(n).padStart(2,'0');
+    const fechaStr = año + '-' + pad(diaSeleccionado.getMonth()+1) + '-' + pad(diaSeleccionado.getDate());
+    document.getElementById('citaFecha').value = fechaStr;
+    document.getElementById('citaHora').value  = slot;
+
+    const etiqueta = DIAS[diaSeleccionado.getDay()] + ' '
+      + diaSeleccionado.getDate() + ' de '
+      + MESES[diaSeleccionado.getMonth()].toLowerCase()
+      + ' a las ' + slot + 'h';
+    const texto = etiqueta.charAt(0).toUpperCase() + etiqueta.slice(1);
+    document.getElementById('calChosenText').textContent = '📅 ' + texto;
+
+    const chosen = document.getElementById('calChosen');
+    chosen.style.display = 'flex';
+    document.getElementById('calError').style.display = 'none';
+    renderHoras();
+    chosen.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+
+  document.getElementById('calPrevBtn').addEventListener('click', () => {
+    if (mes === 0){ mes = 11; año--; } else mes--;
+    renderCal();
+  });
+  document.getElementById('calNextBtn').addEventListener('click', () => {
+    if (mes === 11){ mes = 0; año++; } else mes++;
+    renderCal();
+  });
+  document.getElementById('calClearBtn').addEventListener('click', () => {
+    diaSeleccionado = null; horaSeleccionada = null;
+    document.getElementById('citaFecha').value = '';
+    document.getElementById('citaHora').value  = '';
+    document.getElementById('calSlotsWrap').style.display = 'none';
+    document.getElementById('calChosen').style.display    = 'none';
+    renderCal();
+  });
+
+  // Expuesto para que el reset del formulario limpie también el calendario
+  window._calReset = () => {
+    diaSeleccionado = null; horaSeleccionada = null;
+    document.getElementById('citaFecha').value = '';
+    document.getElementById('citaHora').value  = '';
+    document.getElementById('calSlotsWrap').style.display = 'none';
+    document.getElementById('calChosen').style.display    = 'none';
+    init();
+  };
+
+  init();
+})();
+
+/* --- 7. Carrusel de instalaciones --- */
+(function(){
+  const track = document.getElementById('facTrack');
+  if (!track) return;
+  const prev  = document.getElementById('facPrev');
+  const next  = document.getElementById('facNext');
+  const dotsC = document.getElementById('facDots');
+  const cards = Array.from(track.children);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Crea un punto indicador por cada tarjeta */
+  cards.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ir a la instalación ' + (i + 1));
+    b.addEventListener('click', () => scrollToCard(i));
+    dotsC.appendChild(b);
+  });
+  const dots = Array.from(dotsC.children);
+
+  /* Desplaza la pista hasta una tarjeta concreta */
+  function scrollToCard(i){
+    const card = cards[i];
+    if (card) track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+
+  /* Índice de la tarjeta más cercana al borde izquierdo del viewport */
+  function currentIndex(){
+    const x = track.scrollLeft + track.offsetLeft;
+    let best = 0, dist = Infinity;
+    cards.forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft - x);
+      if (d < dist){ dist = d; best = i; }
+    });
+    return best;
+  }
+
+  /* Actualiza puntos activos y estado de las flechas */
+  function update(){
+    const i = currentIndex();
+    dots.forEach((d, n) => d.classList.toggle('active', n === i));
+    const maxScroll = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= maxScroll;
+  }
+
+  /* Avanzar / retroceder una tarjeta */
+  const step = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 320);
+  prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior:'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left:  step(), behavior:'smooth' }));
+
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(update, 60);
+  }, { passive:true });
+
+  /* Navegación por teclado cuando la pista tiene el foco */
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight'){ e.preventDefault(); next.click(); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); prev.click(); }
+  });
+
+  /* Arrastrar con el ratón (en móvil ya funciona el deslizamiento táctil) */
+  let down = false, startX = 0, startScroll = 0, moved = false;
+  track.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'touch') return;       // dejar el táctil nativo
+    down = true; moved = false;
+    startX = e.clientX; startScroll = track.scrollLeft;
+    track.classList.add('dragging');
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    track.scrollLeft = startScroll - dx;
+  });
+  window.addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false; track.classList.remove('dragging');
+    if (moved) scrollToCard(currentIndex());     // imanta a la tarjeta más cercana
+  });
+  /* Evita que un arrastre dispare el enlace/imagen */
+  track.addEventListener('click', (e) => { if (moved){ e.preventDefault(); e.stopPropagation(); } }, true);
+
+  /* Autoplay suave: avanza solo, se pausa al interactuar (desactivado si reduce-motion) */
+  let auto;
+  function play(){
+    if (reduceMotion) return;
+    auto = window.setInterval(() => {
+      const maxScroll = track.scrollWidth - track.clientWidth - 2;
+      if (track.scrollLeft >= maxScroll) scrollToCard(0);     // vuelve al inicio
+      else next.click();
+    }, 5000);
+  }
+  const stop = () => window.clearInterval(auto);
+  ['pointerenter','focusin','pointerdown'].forEach(ev => track.addEventListener(ev, stop));
+  track.addEventListener('pointerleave', () => { stop(); play(); });
+  [prev, next, dotsC].forEach(el => el.addEventListener('click', () => { stop(); play(); }));
+
+  update();
+  play();
+})();
+
+/* --- 8. Recordatorio de vacuna: genera un .ics con los datos del formulario --- */
+(function(){
+  const form = document.getElementById('vaxForm');
+  if (!form) return;
+  const ok = document.getElementById('vaxOk');
+  const icsBtn = document.getElementById('vaxIcsBtn');
+
+  // Escapa caracteres especiales del formato iCalendar
+  const esc = (s) => (s || '').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+
+  // Lee el formulario y devuelve los datos ya preparados (o null si falta algo)
+  function leerDatos(){
+    const pet  = document.getElementById('vaxPet').value.trim();
+    const type = document.getElementById('vaxType').value.trim() || 'Vacuna';
+    const date = document.getElementById('vaxDate').value;   // AAAA-MM-DD
+    const time = document.getElementById('vaxTime').value;   // HH:MM o ''
+    const warn = document.getElementById('vaxWarn').value;
+    if (!pet || !date) return null;
+
+    const titulo  = `${type} de ${pet} · Miravet`;
+    const detalle = `Recordatorio de Miravet: a ${pet} le toca ${type.toLowerCase()}. Pide tu cita en el 876 65 58 22.`;
+    const lugar   = 'C. de los Lagos de Coronas, 47, 50011 Zaragoza';
+    const ymd     = date.replace(/-/g,'');                   // AAAAMMDD
+
+    return { pet, titulo, detalle, lugar, date, time, warn, ymd };
+  }
+
+  // Marca en rojo los campos obligatorios vacíos
+  function marcarErrores(){
+    ['vaxPet','vaxDate'].forEach(id => {
+      const el = document.getElementById(id);
+      el.style.borderColor = el.value.trim() ? '' : '#E06A4E';
+    });
+  }
+
+  // Construye la URL de Google Calendar (opción PRINCIPAL)
+  function urlGoogle(d){
+    const fmt = d.time ? d.ymd + 'T' + d.time.replace(':','') + '00' : d.ymd;
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text='     + encodeURIComponent(d.titulo)
+      + '&dates='    + fmt + '/' + fmt
+      + '&details='  + encodeURIComponent(d.detalle)
+      + '&location=' + encodeURIComponent(d.lugar);
+  }
+
+  // Construye el contenido del archivo .ics (opción Apple/Outlook)
+  function construirICS(d){
+    let dtstart, dtend;
+    if (d.time){                                            // evento con hora concreta (+1h de duración)
+      const hm = d.time.replace(':','') + '00';
+      dtstart = 'DTSTART:' + d.ymd + 'T' + hm;
+      const endH = String((parseInt(d.time.slice(0,2),10)+1)%24).padStart(2,'0') + d.time.slice(3,5) + '00';
+      dtend   = 'DTEND:' + d.ymd + 'T' + endH;
+    } else {                                                // evento de día completo
+      dtstart = 'DTSTART;VALUE=DATE:' + d.ymd;
+      dtend   = 'DTEND;VALUE=DATE:' + d.ymd;
+    }
+    return [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Miravet//Recordatorio Vacunas//ES','CALSCALE:GREGORIAN',
+      'BEGIN:VEVENT',
+      'UID:' + Date.now() + '@miravet',
+      'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z',
+      dtstart, dtend,
+      'SUMMARY:' + esc(d.titulo),
+      'DESCRIPTION:' + esc(d.detalle),
+      'LOCATION:' + esc(d.lugar),
+      'BEGIN:VALARM','TRIGGER:' + d.warn,'ACTION:DISPLAY','DESCRIPTION:' + esc(d.titulo),'END:VALARM',
+      'END:VEVENT','END:VCALENDAR'
+    ].join('\r\n');
+  }
+
+  // BOTÓN PRINCIPAL (submit): abre Google Calendar con el evento ya rellenado
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const d = leerDatos();
+    if (!d){ marcarErrores(); return; }
+    window.open(urlGoogle(d), '_blank', 'noopener');
+    ok.classList.add('show');
+    setTimeout(() => ok.classList.remove('show'), 8000);
+  });
+
+  // BOTÓN SECUNDARIO: descarga el .ics para Apple Calendar / Outlook
+  icsBtn.addEventListener('click', () => {
+    const d = leerDatos();
+    if (!d){ marcarErrores(); return; }
+    const blob = new Blob([construirICS(d)], { type:'text/calendar;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'vacuna-' + d.pet.toLowerCase().replace(/\s+/g,'-') + '.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+
+/* --- 9. Fallback de imágenes: si una foto no carga, mostrar placeholder de marca --- */
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', () => {
+    const w = img.getAttribute('width') || img.clientWidth || 400;
+    const box = document.createElement('div');
+    box.className = 'img-fallback';
+    box.style.cssText = 'width:100%;height:100%;min-height:160px;';
+    box.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2 5 5.2 5c1.9 0 3.2 1 3.8 2.2C9.6 6 10.9 5 12.8 5 16 5 17.6 8.4 16 11.8 13.5 16.4 12 21 12 21z"/></svg>';
+    img.replaceWith(box);
+  });
+});
+</script>
+</body>
+</html>
