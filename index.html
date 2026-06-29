@@ -1326,8 +1326,8 @@ let fbDB = null;
 window._slotTaken = (f, h) => !!(ocupadas[f] && ocupadas[f][h]);   // ¿franja ocupada?
 
 try {
-  if (typeof firebase !== 'undefined' && !FIREBASE_CONFIG.databaseURL.includes('TU_')) {
-    firebase.initializeApp(FIREBASE_CONFIG);
+  if (typeof firebase !== 'undefined' && !firebaseConfig.databaseURL.includes('TU_')) {
+    firebase.initializeApp(firebaseConfig);
     fbDB = firebase.database();
     // Escucha en vivo: si otra persona reserva, se actualiza al instante
     fbDB.ref('citas_ocupadas').on('value', (snap) => {
