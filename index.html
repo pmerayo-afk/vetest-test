@@ -1379,8 +1379,8 @@ window._enviarCorreoClinica = (d) => {
    debe coincidir EXACTAMENTE con el del archivo apps-script.gs.
    Mientras la URL tenga "TU_...", la cita se seguirá gestionando por email
    (Web3Forms) y, como respaldo, se abrirá Google Calendar manualmente. */
-const APPS_SCRIPT_URL     = "TU_URL_DE_APPS_SCRIPT";       // p. ej. https://script.google.com/macros/s/AKfy.../exec
-const APPS_SCRIPT_SECRETO = "CAMBIA_ESTE_TEXTO_SECRETO";   // el mismo que pongas en apps-script.gs
+const APPS_SCRIPT_URL     = "https://script.google.com/macros/s/AKfycbzCxpqyakqYtgVPnXoRjBxFgd_qpGFYH32HjjZSC97UtiiZ6dq9GCkZoTodVMAdl-6lxQ/exec";       // p. ej. https://script.google.com/macros/s/AKfy.../exec
+const APPS_SCRIPT_SECRETO = "miravet-2026-xYz";   // el mismo que pongas en apps-script.gs
 
 window._appsScriptOn = !!APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('TU_');
 
