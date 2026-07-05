@@ -1144,8 +1144,8 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; line-height:1.08; letter-
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           Confirmar cita
         </button>
-        <p class="form__note">Al confirmar, la cita se registra automáticamente en la agenda de la clínica, que recibirá un aviso el día antes. No compartimos tus datos.</p>
-        <div class="form__ok" id="formOk">✅ ¡Cita solicitada! La hemos registrado en la agenda de Miravet y te contactaremos para confirmarla.</div>
+        <p class="form__note">Al confirmar se abrirá tu calendario para que guardes la cita, y la clínica recibirá tu solicitud automáticamente. No compartimos tus datos.</p>
+        <div class="form__ok" id="formOk">✅ ¡Cita solicitada! Se ha abierto tu calendario para que la guardes. La clínica ya tiene tu solicitud y te contactará para confirmarla.</div>
       </form>
     </div>
   </div>
@@ -1314,7 +1314,6 @@ const firebaseConfig = {
   appId: "1:804635758398:web:36eed7c51a7637ca62266f"
 };
 
-
 /* (B) WEB3FORMS — pega tu Access Key (la generas gratis en web3forms.com
    con el email de la clínica). Es pública, no pasa nada por verla aquí:
    solo sirve para enviarte emails a TI. Mientras tenga "TU_..." no se
@@ -1380,8 +1379,8 @@ window._enviarCorreoClinica = (d) => {
    debe coincidir EXACTAMENTE con el del archivo apps-script.gs.
    Mientras la URL tenga "TU_...", la cita se seguirá gestionando por email
    (Web3Forms) y, como respaldo, se abrirá Google Calendar manualmente. */
-const APPS_SCRIPT_URL     = "https://script.google.com/macros/s/AKfycbzCxpqyakqYtgVPnXoRjBxFgd_qpGFYH32HjjZSC97UtiiZ6dq9GCkZoTodVMAdl-6lxQ/exec";       // p. ej. https://script.google.com/macros/s/AKfy.../exec
-const APPS_SCRIPT_SECRETO = "miravet-2026-xYz";   // el mismo que pongas en apps-script.gs
+const APPS_SCRIPT_URL     = "TU_URL_DE_APPS_SCRIPT";       // p. ej. https://script.google.com/macros/s/AKfy.../exec
+const APPS_SCRIPT_SECRETO = "CAMBIA_ESTE_TEXTO_SECRETO";   // el mismo que pongas en apps-script.gs
 
 window._appsScriptOn = !!APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('TU_');
 
@@ -1498,47 +1497,36 @@ form.addEventListener('submit', (ev) => {
   const mascota  = document.getElementById('mascota').value.trim();
   const msg      = document.getElementById('mensaje').value.trim();
 
-  const title   = 'Cita Miravet: ' + (mascota ? mascota + ' (' + nombre + ')' : nombre);
-  const details = [
-    'Propietario: ' + nombre,
-    tel      ? 'Tel: '     + tel      : '',
-    emailVal ? 'Email: '   + emailVal : '',
-    mascota  ? 'Mascota: ' + mascota  : '',
-    msg      ? 'Motivo: '  + msg      : ''
-  ].filter(Boolean).join('\n');
-
-  // ================================================================
-  // 📧 CORREO DEL CALENDARIO — cambia aquí para usar otra cuenta
-  const CALENDAR_EMAIL = 'patricio.merayo@gmail.com';
-  // ================================================================
-
-  const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-    + '&text='     + encodeURIComponent(title)
-    + '&dates='    + startDT + '/' + endDT
-    + '&details='  + encodeURIComponent(details)
-    + '&location=' + encodeURIComponent('C. de los Lagos de Coronas, 47, 50011 Zaragoza')
-    + '&authuser=' + encodeURIComponent(CALENDAR_EMAIL);
-
-  // 1) Registra la cita en el calendario de la clínica
+  // Datos que también se envían a la clínica
   const datosCita = { nombre, email: emailVal, tel, mascota, fecha, hora, msg };
-  if (window._appsScriptOn) {
-    // Automático y silencioso: el Apps Script crea el evento con aviso el día antes
-    window._crearEventoCalendario(datosCita);
-  } else {
-    // Respaldo (mientras no configures Apps Script): abre Google Calendar manualmente
-    window.open(gcalUrl, '_blank', 'noopener');
-  }
 
-  // 2) Bloquea la franja en la nube para el resto de usuarios (sin datos personales)
+  // Datos del evento para el calendario del CLIENTE
+  const tituloCliente = 'Cita en Miravet' + (mascota ? ' · ' + mascota : '');
+  const descCliente   = 'Cita veterinaria en Miravet.\nTel: 876 65 58 22';
+  const dirClinica    = 'C. de los Lagos de Coronas, 47, 50011 Zaragoza';
+
+  // ➊ Abre Google Calendar para que EL CLIENTE guarde la cita en SU calendario.
+  //    Sin "authuser": se abre en la cuenta de Google en la que él esté conectado.
+  const gcalCliente = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text='     + encodeURIComponent(tituloCliente)
+    + '&dates='    + startDT + '/' + endDT
+    + '&details='  + encodeURIComponent(descCliente)
+    + '&location=' + encodeURIComponent(dirClinica);
+  window.open(gcalCliente, '_blank', 'noopener');
+
+  // ➋ Registra la cita AUTOMÁTICAMENTE en el calendario de la CLÍNICA (si está configurado)
+  if (window._appsScriptOn) window._crearEventoCalendario(datosCita);
+
+  // ➌ Bloquea la franja para el resto de usuarios (sin datos personales)
   if (window._marcarOcupada) window._marcarOcupada(fecha, hora);
 
-  // 3) Envía a la clínica el email con TODOS los datos de la cita (registro/respaldo)
+  // ➍ Envía a la clínica el email con todos los datos de la cita
   if (window._enviarCorreoClinica) window._enviarCorreoClinica(datosCita);
 
   formOk.classList.add('show');
   form.reset();
   if (window._calReset) window._calReset();
-  setTimeout(() => formOk.classList.remove('show'), 8000);
+  setTimeout(() => formOk.classList.remove('show'), 12000);
 });
 
 /* --- 6. Calendario interactivo de selección de cita --- */
